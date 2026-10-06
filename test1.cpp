@@ -2,22 +2,26 @@
 using namespace std;
 int main()
 {
-    int amara_age;
-    int amir_age;
-    cout << "Enter amara age: ";
-    cin >> amara_age;
-    cout << "Enter amir age: ";
-    cin >> amir_age;
-    if(amara_age>amir_age)
+   double amount,discount,net_payable;
+   amount = 0;
+   discount = 0;
+   net_payable = 0;
+    cout<<"Enter the amount of bill: ";
+    cin>>amount;
+    if(amount>5000)
     {
-        cout<<"Amara is older than Amir";
+        discount = amount*0.1;
+        net_payable = amount - discount;
+        cout<<"Discount is: "<<discount<<endl;
     }
-    else if(amara_age<amir_age)
+    else if(amount>3000)
     {
-        cout<<"Amir is older than Amara";
+        discount = amount*0.05;
+        net_payable = amount - discount;
+        cout<<"Discount is: "<<discount<<endl;
     }
     else
     {
-        cout<<"Amara and Amir are of the same age";
+        discount = 0;
     }
 }
