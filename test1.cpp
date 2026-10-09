@@ -1,26 +1,27 @@
 #include <iostream>
 using namespace std;
-class university{
+class Student{
     public:
-    int salary;
-    string department;
-    string faculty;
-     university (){
-        cout << "university constructor called" << endl;
-        salary = 0;
-        department = " ";
-        faculty = " ";
-     }
-     void displayInfo(){
-        cout << "Salary: " << salary << endl;
-        cout << "Department: " << department << endl;
-        cout << "Faculty: " << faculty << endl;
-     }
-    };
+    int age;
+    string name;
+    string gender;
+    Student(int a, string n, string g){
+        age = a;
+        name = n;
+        gender = g;
+    }
+    void displayInfo(){
+        cout << "Age: " << age << endl;
+        cout << "Name: " << name << endl;
+        cout << "Gender: " << gender << endl;
+    }
+};
 
 int main(){
-      university u1;
-      u1.displayInfo();
+       Student s1(22, "Ahmad","male");
+       s1.displayInfo();
+       Student s2(20, "Ali","male");
+       s2.displayInfo();
 
         return 0;
 }
