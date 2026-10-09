@@ -1,43 +1,40 @@
 #include <iostream>
 using namespace std;
-class car {
+class mobilephone{
     public:
-    int year;
+    int batterylife;
     string brand;
     string model;
-     void startEngine() {
-        cout <<"brand: " << brand <<"model: " << model << " Engine started" << endl;
+     void makecall() {
+        cout <<"brand: " << brand <<"model: " << model << " Making a call" << endl;
      }
-     void stopEngine(){
-        cout <<"brand: " << brand <<"model: " << model << " Engine stopped" << endl;
+     void sendMessage(){
+        cout <<"brand: " << brand <<"model: " << model << " Sending a message" << endl;
      }
-     void beep() {
-        cout <<"brand: " << brand <<"model: " << model << " Beep Beep" << endl;
+     void playMusic() {
+        cout <<"brand: " << brand <<"model: " << model << " Music" << endl;
      }
-     void accelarate() {
-        cout <<"brand: " << brand <<"model: " << model << " Accelerating" << endl;
-     }
+
     };
 
 int main(){
-      car c1;
-      c1.brand = "Toyota";
-      c1.model = "Corolla"; 
-      c1.year = 2020;
-      c1.startEngine();
-      c1.stopEngine();
-      c1.beep();
-      c1.accelarate();
+      mobilephone p1;
+      p1.brand = "Iphone";
+      p1.model = "18 Pro Max"; 
+      p1.batterylife = 80;
+      p1.makecall();
+      p1.sendMessage();
+      p1.playMusic();
 
 
-    car c2;
-        c2.brand = "Honda";
-        c2.model = "Civic"; 
-        c2.year = 2021;
-        c2.startEngine();
-        c2.stopEngine();
-        c2.beep();
-        c2.accelarate();
+    mobilephone p2;
+        p2.brand = "Samsung";
+        p2.model = "S21"; 
+        p2.batterylife = 90;
+        p2.makecall();
+        p2.sendMessage();
+        p2.playMusic();
+
 
         return 0;
 }
