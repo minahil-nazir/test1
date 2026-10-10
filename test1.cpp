@@ -1,28 +1,20 @@
 #include <iostream>
 using namespace std;
-  class Student {
+  class BankAccount {
+    private:
+   double balance;
 public:
- string name;
- int age;
- // Parameterized Constructor
- Student(string n,int a) {
- name = n;
- age = a;
- }
- // Copy Constructor
- Student(const Student &s) {
- name = s.name;
- age = s.age;
- }
- void display() {
- cout << "Student Name: " << name << endl;
- cout << "Student Age: " << age << endl;
- }
+void setbalance(double b) {
+balance = b;
+}
+double getbalance() {
+return balance;
+
+}
 };
 int main() {
- Student s1("Ali", 20);
- Student s2 = s1; // Copy constructor called
- s2.display();
- return 0;
-}
-
+BankAccount * acc = new BankAccount();
+acc->setbalance(1000.0);
+cout << acc->getbalance() << endl;
+return 0;
+};
