@@ -1,39 +1,31 @@
 #include <iostream>
 using namespace std;
 
-class Student {
-private:
-    string name;        // inaccessible from main
+class Vehicle {
 public:
-    int age;
-    int rollno;
-protected:
-    int cgpa;           // inaccessible from main
-
+    string brand;
+  
 public:
     void display() {
-        cout << "Name: " << name << endl;
-        cout << "Age: " << age << endl;
-        cout << "Roll No: " << rollno << endl;
-        cout << "CGPA: " << cgpa << endl;
+        cout << "Brand: " << brand << endl;
     }
 };
 
-class teacher : public Student {
-private:
-    string subject;     // inaccessible from main
+class car : public Vehicle {
 public:
-    void showSubject() {
-        cout << "Subject: " << subject << endl;
+    int doors = 4;    // inaccessible from main
+
+    void showDoors() {
+        cout << "Doors: " << doors << endl;
     }
 };
 
 int main() {
-    teacher t;
-    t.age = 30;         // ✅ public — OK
-    t.rollno = 101;     // ✅ public — OK
-    t.display();
-    t.showSubject();
+    car c;
+    c.brand = "Toyota";
+    c.doors = 4;
+    c.display();
+    c.showDoors();
     return 0;
 };
 
