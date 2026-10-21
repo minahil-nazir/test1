@@ -3,29 +3,32 @@ using namespace std;
 
 class Vehicle {
 public:
-    string brand;
-  
-public:
-    void display() {
-        cout << "Brand: " << brand << endl;
+    string brand = "Toyota";
+    void startEngine() {
+        cout << "Engine started!" << endl; 
     }
 };
 
-class car : public Vehicle {
+class Car : protected Vehicle {          // Level 2
 public:
-    int doors = 4;    // inaccessible from main
+    int doors = 4;
+    void showCarDetails() {
+        cout << "Brand: " << brand << ", Doors: " << doors << endl;
+    }
+};
 
-    void showDoors() {
-        cout << "Doors: " << doors << endl;
+class SportsCar : private Car {        // Level 3 — THIS makes it multilevel
+public:
+    int topSpeed = 300;
+    void showSportsCar() {
+        cout << " Doors: " << doors
+             << " Top Speed: " << topSpeed << endl;
     }
 };
 
 int main() {
-    car c;
-    c.brand = "Toyota";
-    c.doors = 4;
-    c.display();
-    c.showDoors();
+    SportsCar sc;
+    sc.showSportsCar();     // own           (child)
     return 0;
-};
+}
 
