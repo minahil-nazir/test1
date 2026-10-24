@@ -1,12 +1,37 @@
 #include <iostream>
+#include <string>
 using namespace std;
+
+struct Student
+{
+    int rollNo;
+    string name;
+    float marks;
+};
+
 int main()
 {
-int marks[6] = {34, 56, 67, 87, 98, 65};
-cout << " Array is:";
-for (int i=0; i<6; i++)
-{
-    cout << marks[i] << " ";
+    Student s;
+
+    cout << "Enter roll number: ";
+    cin >> s.rollNo;
+
+    cout << "Enter name: ";
+    cin >> ;ws
+    getline(cin, s.name);
+
+    cout << "Enter marks: ";
+    cin >> s.marks;
+
+    cout << "\n--- Student Record ---" << endl;
+    cout << "Roll No: " << s.rollNo << endl;
+    cout << "Name: " << s.name << endl;
+    cout << "Marks: " << s.marks << endl;
+
+    return 0;
 }
-return 0;
-}
+
+  
+
+
+
