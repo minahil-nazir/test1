@@ -2,34 +2,39 @@
 #include <string>
 using namespace std;
 
-struct Student
+class Car
 {
-    int rollNo;
-    string name;
-    float marks;
+public:
+    string brand;
+    int speed;
+
+    void showInfo()
+    {
+        cout << "Brand: " << brand << endl;
+        cout << "Speed: " << speed << " km/h" << endl;
+    }
+
+    void accelerate()
+    {
+        speed = speed + 10;
+    }
 };
 
 int main()
 {
-    Student s;
+    Car c1;
+    c1.brand = "Toyota";
+    c1.speed = 60;
 
-    cout << "Enter roll number: ";
-    cin >> s.rollNo;
-
-    cout << "Enter name: ";
-    cin >> ;ws
-    getline(cin, s.name);
-
-    cout << "Enter marks: ";
-    cin >> s.marks;
-
-    cout << "\n--- Student Record ---" << endl;
-    cout << "Roll No: " << s.rollNo << endl;
-    cout << "Name: " << s.name << endl;
-    cout << "Marks: " << s.marks << endl;
+    c1.accelerate();
+    c1.showInfo();
 
     return 0;
 }
+
+
+
+  
 
   
 
