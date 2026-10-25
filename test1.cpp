@@ -1,42 +1,30 @@
 #include <iostream>
-#include <string>
 using namespace std;
+class Test {
+    private :
+        string name;
+        int value;
 
-class Car
-{
-public:
-    string brand;
-    int speed;
-
-    void showInfo()
-    {
-        cout << "Brand: " << brand << endl;
-        cout << "Speed: " << speed << " km/h" << endl;
+    public :
+    void setName(string n){
+        name = n;
     }
-
-    void accelerate()
-    {
-        speed = speed + 10;
+    void setValue(int v) {
+        value = v;
+    }
+    string getName(){
+        return name;
+    }
+    int getValue() {
+        return value;
     }
 };
-
-int main()
-{
-    Car c1;
-    c1.brand = "Toyota";
-    c1.speed = 60;
-
-    c1.accelerate();
-    c1.showInfo();
+int main() {
+    Test t;
+    t.setValue(10);
+    cout << "Value: " << t.getValue() << endl;
+    t.setName("Laptop");
+    cout << "Name: " << t.getName() << endl;
 
     return 0;
-}
-
-
-
-  
-
-  
-
-
-
+};
