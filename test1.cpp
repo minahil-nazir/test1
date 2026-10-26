@@ -1,30 +1,68 @@
 #include <iostream>
+#include <string>
 using namespace std;
-class Test {
-    private :
-        string name;
-        int value;
 
-    public :
-    void setName(string n){
-        name = n;
+class DNASample {
+private:
+    string patientname;
+    int sampleID;
+    string DNAsequence;
+    static int totalSamples;
+
+public:
+    DNASample(string name, int id, string sequence) {
+        patientname = name;
+        sampleID = id;
+        DNAsequence = sequence;
     }
-    void setValue(int v) {
-        value = v;
+    DNASample(const DNASample &D){
+        patientname = D.patientname;
+        sampleID = D.sampleID;
+        DNAsequence = D.DNAsequence;
+       
     }
-    string getName(){
-        return name;
-    }
-    int getValue() {
-        return value;
+
+    friend void checkDNAquality(DNASample obj);
+    static void reportTotalSamples() {
+        cout << "Total DNA Samples Created: "
+             << totalSamples << endl;
     }
 };
+
+int DNASample::totalSamples = 0;
+void checkDNAquality(DNASample d1) {
+    int length = d1.DNAsequence.length();
+    bool valid = true;
+
+    for (int i = 0; i < length; i++) {
+        if (d1.DNAsequence[i] != 'A' &&
+            d1.DNAsequence[i] != 'T' &&
+            d1.DNAsequence[i] != 'G' &&
+            d1.DNAsequence[i] != 'C') {
+            valid = false;
+            break;
+        }
+    }
+
+    cout << "DNA Length: " << length << endl;
+
+    if (valid && length >= 6)
+        cout << "Valid DNA Sample" << endl;
+    else
+        cout << "Invalid DNA Sample" << endl;
+}
+
 int main() {
-    Test t;
-    t.setValue(10);
-    cout << "Value: " << t.getValue() << endl;
-    t.setName("Laptop");
-    cout << "Name: " << t.getName() << endl;
+    DNASample d1("Ali", 101, "ATGCGT");
+    DNASample d2("Sara", 102, "ATGC");
+    DNASample d3(d1);
+
+    cout << "Checking DNA quality:" << endl;
+    checkDNAquality(d1);
+    checkDNAquality(d2);
+
+    cout << "\n";
+    DNASample::reportTotalSamples();
 
     return 0;
-};
+}
