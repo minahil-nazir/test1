@@ -1,19 +1,19 @@
 #include <iostream>
 using namespace std;
-int a ,b;
-int add (int a,int b){
-    return a+b;
-}
-double add(double a,double b){
-    return a+b;
-}
-int add(int a,int b,int c){
-    return a+b+c;
-}
+class bankaccount{
+    public:
+    int balance;
+    static float rate;
+};
+float bankaccount :: rate=6.7;
  int main(){
-    cout<<add(2,5)<<endl;
-    cout<< add(4.3,5.6)<<endl;
-    cout << add(5,4,5);
+bankaccount b1,b2;
+b1.balance=1000;
+b2.balance=2000;
+cout<<b1.balance<<endl;
+cout<<b2.balance<<endl;
+cout<<bankaccount::rate;
+return 0;
  }
 
 
